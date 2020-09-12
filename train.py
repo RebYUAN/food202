@@ -5,9 +5,7 @@ import json
 import matplotlib.pyplot as plt
 import os
 import torch.optim as optim
-from model import resnet34, resnet50, resnet101
-
-
+from model import resnet18, resnet34, resnet50, resnet101
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
@@ -65,7 +63,7 @@ optimizer = optim.Adam(net.parameters(), lr=0.0001)
 
 best_acc = 0.0
 save_path = './resNet34.pth'
-for epoch in range(5):
+for epoch in range(10):
     # train
     net.train()
     running_loss = 0.0
